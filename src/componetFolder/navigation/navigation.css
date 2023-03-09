@@ -1,0 +1,148 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 1em 0;
+  border-bottom: 0.01em solid rgba(164, 255, 252, 0.28);
+  z-index: 100;
+  transition: 0.5s ease-in;
+}
+
+.fixed__navbar {
+  background: linear-gradient(90deg, #050c0eb2, #2b112e46);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.nav__container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle__btn {
+  position: relative;
+  display: none;
+  width: 2.5em;
+  height: 2em;
+  border: 0;
+  outline: none;
+  /* overflow: hidden; */
+  cursor: pointer;
+}
+
+.logo {
+  color: whitesmoke;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.logo span {
+  color: var(--logoColor);
+}
+
+.links {
+  display: flex;
+  gap: 0 1.5em;
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+  transition: 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+ul li::before {
+  position: absolute;
+  bottom: -0.5em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 0;
+  height: 0.11em;
+  border-bottom: 0.18em solid var(--borderColor);
+  border-radius: 0 0.22em 0.22em 0;
+  transition: 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+ul li:hover::before {
+  width: 100%;
+}
+
+.scrolling__link {
+  opacity: 0.85;
+  font-size: 1.2em;
+  font-weight: 450;
+  color: rgb(253, 249, 253);
+  cursor: pointer;
+}
+
+.scrolling__link:focus {
+  color: var(--logoColor);
+  opacity: 1;
+}
+
+.scrolling__link:visited {
+  color: none;
+}
+
+.link__container {
+  transition: 0.5s ease-in-out;
+}
+
+/* /////////////////////////////////////////// */
+@media screen and (max-width: 640px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+  .toggle__btn {
+    display: unset;
+  }
+
+  .nav__container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: unset;
+    gap: 0.5em 0;
+  }
+
+  .link__container {
+    overflow: hidden;
+    /* transition: 0.5s ease-in-out; */
+    height: 0;
+    /* transition: 0.5s linear; */
+  }
+  .show__link {
+    height: 200px;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0.6em 0;
+  }
+
+  ul li {
+    text-align: center;
+    /* width: 100%; */
+    letter-spacing: 1px;
+    padding-bottom: 0.11em;
+    border-width: 0.11em;
+  }
+  ul li::before {
+    bottom: -0.3em;
+    /* border-bottom: 0.11em solid ; */
+  }
+  ul li:hover {
+    transform: scale(1.1);
+  }
+
+  ul li:hover::before {
+    width: 50%;
+  }
+}

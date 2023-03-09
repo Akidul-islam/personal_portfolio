@@ -1,0 +1,22 @@
+.skills__container {
+  margin: 0.5em;
+  font-family: poppins;
+  color: rgb(54, 68, 54);
+}
+.skills__bar {
+  width: 15em;
+  height: 1em;
+  background: white;
+  border-radius: 0.2em;
+  background: transparent;
+  box-shadow: inset 0 0 10px #bdeaff;
+}
+
+.inner__bar span {
+  position: absolute;
+  color: #2c3333;
+  right: 0;
+  bottom: -1em;
+  font-weight: 600;
+  font-size: 0.8em;
+}
